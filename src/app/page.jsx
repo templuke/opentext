@@ -5,7 +5,7 @@ import MsgList from "../components/MsgList"
 
 export default function Home() {
   return (
-<div className="m-60">
+<div className="">
 
 <MsgList/>
 <SendMsg/>

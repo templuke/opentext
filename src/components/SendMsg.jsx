@@ -49,7 +49,7 @@ export default function SendMsg() {
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}
-        className="border border-slate-500 px-8 py-2"
+        className="border border-slate-500 px-8 py-2 bg-[#b8feff]"
         type="text"
         placeholder="Topic Title"
       />
@@ -57,14 +57,14 @@ export default function SendMsg() {
       <input
         onChange={(e) => setDescription(e.target.value)}
         value={description}
-        className="border border-slate-500 px-8 py-2"
+        className="border border-slate-500 px-8 py-2 bg-[#b8feff]"
         type="text"
         placeholder="Topic Description"
       />
 
       <button
         type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+        className="bg-green-600 font-bold text-white py-3 px-6 w-fit "
       >
         Send Msg
       </button>
