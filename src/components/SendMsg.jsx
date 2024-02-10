@@ -18,7 +18,7 @@ export default function SendMsg() {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/msg", {
+      const res = await fetch("api/msg", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -29,7 +29,7 @@ export default function SendMsg() {
       if (res.ok) {
 
 
-        router.push("/");
+        // router.push("/");
         console.log("msg send successfuly")
 
 
@@ -40,6 +40,7 @@ export default function SendMsg() {
     } catch (error) {
       console.log(error);
     }
+
 
   };
 

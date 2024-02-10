@@ -8,6 +8,7 @@ const msgSchema = new Schema(
   {
     timestamps: true,
   }
+  
 );
 
 const Msg = mongoose.models.Msg || mongoose.model("Msg", msgSchema);

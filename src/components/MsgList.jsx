@@ -4,7 +4,8 @@ import Link from "next/link";
 
 const getMsg = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/msg", {
+    // const res = await fetch("http://localhost:3000/api/msg", {
+    const res = await fetch("https://opentext-luqman.vercel.app//api/msg", {
       cache: "no-store",
     });
 
