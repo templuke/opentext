@@ -30,7 +30,10 @@ export default function SendMsg() {
       if (res.ok) {
 
 
-        router.push("/");
+        // router.push("/");
+         router.reload();
+        window.scrollTo({ top: document.body.scrollHeight });
+    
         console.log("msg send successfuly")
 
 
