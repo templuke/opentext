@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+
 export default function SendMsg() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -29,7 +30,7 @@ export default function SendMsg() {
       if (res.ok) {
 
 
-        // router.push("/");
+        router.push("/");
         console.log("msg send successfuly")
 
 
