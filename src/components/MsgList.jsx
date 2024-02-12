@@ -25,11 +25,12 @@ export default async function MsgList() {
   const { msgs } = await getMsg();
 
   return (
-    <>
+    <div className="">
+    <div className="">
       {msgs.map((t) => (
         <div
           key={t._id}
-          className="p-4 my-3 flex justify-between gap-5 items-start rounded-md shadow-md mb-5"
+          className="p-4 my-3  flex justify-between gap-5 items-start rounded-md shadow-md mb-5"
         >
           <div>
             <h2 className="font-bold text-2xl">{t.title}</h2>
@@ -44,6 +45,7 @@ export default async function MsgList() {
           </div>
         </div>
       ))}
-    </>
+    </div>
+    </div>
   );
 }

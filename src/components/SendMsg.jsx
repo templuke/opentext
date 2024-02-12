@@ -15,7 +15,7 @@ export default function SendMsg() {
     e.preventDefault();
 
     if (!title || !description) {
-      alert("Title and description are required.");
+      alert("Title and Note Text are required.");
       return;
     }
 
@@ -29,6 +29,9 @@ export default function SendMsg() {
       });
 
       if (res.ok) {
+        setTitle("");
+        setDescription("");
+
         reloadAndScrollToBottom(); // Call the function to reload and scroll to bottom
         console.log("msg sent successfully");
       } else {
@@ -44,24 +47,24 @@ export default function SendMsg() {
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}
-        className="border border-slate-500 px-8 py-2 bg-[#b8feff]"
+        className="border border-slate-500 px-8 py-2 bg-white rounded"
         type="text"
-        placeholder="Topic Title"
+        placeholder="Note Title"
       />
 
       <input
         onChange={(e) => setDescription(e.target.value)}
         value={description}
-        className="border border-slate-500 px-8 py-2 bg-[#b8feff]"
+        className="border border-slate-500 px-8 py-2 bg-white rounded"
         type="text"
-        placeholder="Topic Description"
+        placeholder="Note Text"
       />
 
       <button
         type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+        className="bg-green-600 font-bold text-white py-3 px-6 w-fit rounded transition duration-300 ease-in-out hover:bg-green-700 active:bg-black"
       >
-        Send Msg
+        Done
       </button>
     </form>
   );
