@@ -22,7 +22,7 @@ export default function SendMsg() {
     e.preventDefault();
 
     if (!title || !description) {
-      alert("Title and description are required.");
+      alert("Title and Note Text are required.");
       return;
     }
       
@@ -45,7 +45,7 @@ export default function SendMsg() {
 
 
       } else {
-        throw new Error("Failed to create a topic");
+        throw new Error("Failed to create a Note");
       }
     } catch (error) {
       console.log(error);
@@ -61,7 +61,7 @@ export default function SendMsg() {
         value={title}
         className="border border-slate-500 px-8 py-2 bg-[#b8feff] rounded-md"
         type="text"
-        placeholder="Topic Title"
+        placeholder="Note Title"
       />
 
       <input
@@ -69,14 +69,15 @@ export default function SendMsg() {
         value={description}
         className="border border-slate-500 px-8 py-2 bg-[#b8feff] rounded-md"
         type="text"
-        placeholder="Topic Description"
+        placeholder="Note Text"
       />
 
       <button
         type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit hover:bg-green-800 active:bg-green-950 cursor-pointer transition duration-300 ease-in-out "
+        className="bg-green-600 font-bold rounded-md text-white py-3 px-6 w-fit hover:bg-green-800 active:bg-green-950 cursor-pointer transition duration-300 ease-in-out "
       >
-        Send Msg
+        Done
+        
       </button>
     </form>
   );
