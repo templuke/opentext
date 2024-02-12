@@ -1,14 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
+const reloadAndScrollToBottom = () => {
+  window.location.reload(); // Reload the page
+  window.scrollTo(0, document.documentElement.scrollHeight); // Scroll to the bottom
+};
 
 export default function SendMsg() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
-  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,24 +29,14 @@ export default function SendMsg() {
       });
 
       if (res.ok) {
-
-
-        // router.push("/");
-         router.reload();
-        window.scrollTo({ top: document.body.scrollHeight });
-    
-        console.log("msg send successfuly")
-
-
-
+        reloadAndScrollToBottom(); // Call the function to reload and scroll to bottom
+        console.log("msg sent successfully");
       } else {
         throw new Error("Failed to create a topic");
       }
     } catch (error) {
       console.log(error);
     }
-
-
   };
 
   return (
@@ -68,7 +59,7 @@ export default function SendMsg() {
 
       <button
         type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit "
+        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
       >
         Send Msg
       </button>

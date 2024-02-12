@@ -1,4 +1,3 @@
-import Image from "next/image";
 // import MsgList from "..components/MsgList"
 import SendMsg from "../components/SendMsg"
 import MsgList from "../components/MsgList"
