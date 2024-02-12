@@ -3,7 +3,7 @@
 "use client"
 // export default Header
 import { useEffect } from 'react';
-import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+// import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 const up = () => {
     window.scrollTo(0, 0); // Scroll to the top
@@ -29,8 +29,8 @@ const Header = () => {
 
             <div className='z-30 fixed top-[70%] right-[5vh] rounded-xl cursor-pointer '>
                 <div className="flex-col">
-                    <div onClick={up} className="bg-white p-4 rounded-full hover:bg-gray-100 active:bg-[#b9dbf6] cursor-pointer  transition duration-300 ease-in-out"><FaArrowUp /></div>
-                    <div onClick={down} className="bg-white p-4 rounded-full hover:bg-gray-100 active:bg-[#b9dbf6] cursor-pointer transition duration-300 ease-in-out mt-5"><FaArrowDown /></div>
+                    {/* <div onClick={up} className="bg-white p-4 rounded-full hover:bg-gray-100 active:bg-[#b9dbf6] cursor-pointer  transition duration-300 ease-in-out"><FaArrowUp /></div>
+                    <div onClick={down} className="bg-white p-4 rounded-full hover:bg-gray-100 active:bg-[#b9dbf6] cursor-pointer transition duration-300 ease-in-out mt-5"><FaArrowDown /></div> */}
                 </div>
             </div>
         </>
