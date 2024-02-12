@@ -3,6 +3,15 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+
+
+const reloadAndScrollToBottom = () => {
+  window.location.reload(); // Reload the page
+  window.scrollTo(0, document.documentElement.scrollHeight); // Scroll to the bottom
+};
+
+
+
 export default function SendMsg() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -28,9 +37,10 @@ export default function SendMsg() {
 
       if (res.ok) {
 
-
-        // router.push("/");
+        setTitle('');
+        setDescription('');
         console.log("msg send successfuly")
+        reloadAndScrollToBottom(); // Call the function to reload and scroll to bottom
 
 
 
