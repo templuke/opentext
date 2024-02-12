@@ -1,24 +1,22 @@
 "use client";
 
 import { useState } from "react";
-
-const reloadAndScrollToBottom = () => {
-  window.location.reload(); // Reload the page
-  window.scrollTo(0, document.documentElement.scrollHeight); // Scroll to the bottom
-};
+import { useRouter } from "next/navigation";
 
 export default function SendMsg() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  const router = useRouter();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!title || !description) {
-      alert("Title and Note Text are required.");
+      alert("Title and description are required.");
       return;
     }
-
+      
     try {
       const res = await fetch("api/msg", {
         method: "POST",
@@ -29,17 +27,21 @@ export default function SendMsg() {
       });
 
       if (res.ok) {
-        setTitle("");
-        setDescription("");
 
-        reloadAndScrollToBottom(); // Call the function to reload and scroll to bottom
-        console.log("msg sent successfully");
+
+        // router.push("/");
+        console.log("msg send successfuly")
+
+
+
       } else {
         throw new Error("Failed to create a topic");
       }
     } catch (error) {
       console.log(error);
     }
+
+
   };
 
   return (
@@ -47,24 +49,24 @@ export default function SendMsg() {
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}
-        className="border border-slate-500 px-8 py-2 bg-white rounded"
+        className="border border-slate-500 px-8 py-2 bg-[#b8feff]"
         type="text"
-        placeholder="Note Title"
+        placeholder="Topic Title"
       />
 
       <input
         onChange={(e) => setDescription(e.target.value)}
         value={description}
-        className="border border-slate-500 px-8 py-2 bg-white rounded"
+        className="border border-slate-500 px-8 py-2 bg-[#b8feff]"
         type="text"
-        placeholder="Note Text"
+        placeholder="Topic Description"
       />
 
       <button
         type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit rounded transition duration-300 ease-in-out hover:bg-green-700 active:bg-black"
+        className="bg-green-600 font-bold text-white py-3 px-6 w-fit "
       >
-        Done
+        Send Msg
       </button>
     </form>
   );
